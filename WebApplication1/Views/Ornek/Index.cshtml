@@ -1,0 +1,39 @@
+﻿@using WebApplication1.Controllers
+@{
+    ViewData["Title"] = "Index";
+}
+
+@foreach (var item in Model)
+{
+    <p>@item.Id - @item.Name</p>
+}
+
+<h1>Ornek Controller , Index sayfası </h1> 
+
+@ViewBag.name 
+
+<p>@ViewBag.name </p>
+
+@{
+    <p>@ViewBag.name</p>
+}
+
+@{
+    var name= ViewBag.name;
+    <p>@name</p>
+}
+
+
+<p>Yaş: @ViewData["age"]</p>
+
+
+<h3>İsimler:</h3>
+@foreach (var item in ViewData["namess"] as List<string>)
+{
+    <p>@item</p>
+}    
+
+
+<p> @ViewBag.person.Id - @ViewBag.person.Name - @ViewBag.person.Age </p>
+
+<p>@TempData["surname"]</p>

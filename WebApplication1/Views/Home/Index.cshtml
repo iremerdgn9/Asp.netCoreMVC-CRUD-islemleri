@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    //isteğimize göre değişken tanımlama yapabiliriz. ve istediğimiz yerde kullanabilitiz @alert diye.
+    var alert = "bu bir uyarı mesajıdır.";
+}
+@section Css
+{
+    <link rel="stylesheet" href="~/css/example.css" asp-append-version="true" />
+
+    <style>
+        h1
+        {
+            color: purple;
+        }
+
+    </style>
+
+}
+
+
+@* javascript kodları burada yazılır. *@
+@section scripts 
+{
+    <script type="text/javascript">
+    alert("hoş geldiniz")    
+    </script>
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome İREM</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<h2>Hoşgeldiniz</h2>
+
+<div>Günün tarihi: @DateTime.Now.ToShortDateString()</div> <!--tek satırlı kod için-->
+
+@{
+    var dateTime = DateTime.Now.ToShortDateString();
+    var message = "this is a message!!";
+
+    @: Bugünün tarihi:  @dateTime
+    <div>Mesaj:  @message</div> 
+    <text>Bugünün tarihi:  @dateTime</text>
+}
+
+<div class="text-center">
+    <h2 style="color:red">Solvera Yazılım</h2>
+</div>
+
+@*
+@if (1 == 1)
+{
+    <p>doğru</p>
+}
+else
+{
+    <p>yanlış</p>
+}
+
+@for (var i=0; i<10; i++)
+{
+    <p>@i</p>
+}
+
+@foreach (var item in Enumerable.Range(1,10).ToList())
+{
+    <p>@item</p>
+}
+*@
+
+<partial name="_MenuPartialView"/>
